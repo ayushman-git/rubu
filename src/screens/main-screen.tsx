@@ -11,6 +11,7 @@ import {
 } from 'native-base'
 import ThemeToggle from '../components/theme-toggle'
 import BouncyCheckbox from "react-native-bouncy-checkbox";
+import TaskItem from '../components/task-item';
 
 export default function MainScreen() {
   return (
@@ -24,7 +25,7 @@ export default function MainScreen() {
     >
       <VStack space={5} alignItems={'center'}>
         <Box w="100px" h="100px">
-        <BouncyCheckbox onPress={(isChecked: boolean) => {}} />
+          <TaskItem isDone={true} onToggleCheckbox={() => {}} />
         </Box>
         <Box>
           <ThemeToggle />
