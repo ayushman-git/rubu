@@ -10,7 +10,6 @@ import {
   useColorModeValue,
 } from 'native-base'
 import ThemeToggle from '../components/theme-toggle'
-import BouncyCheckbox from "react-native-bouncy-checkbox";
 import TaskItem from '../components/task-item';
 
 export default function MainScreen() {
@@ -23,9 +22,9 @@ export default function MainScreen() {
       flex={1}
       safeArea
     >
-      <VStack space={5} alignItems={'center'}>
-        <Box w="100px" h="100px">
-          <TaskItem isDone={true} onToggleCheckbox={() => {}} />
+      <VStack space={5} alignItems={'center'} w="full">
+        <Box w={"full"}>
+          <TaskItem isDone={true} subject='Hello text' onToggleCheckbox={() => {}} onRemove={() => {}} />
         </Box>
         <Box>
           <ThemeToggle />
