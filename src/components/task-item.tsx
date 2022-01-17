@@ -24,6 +24,7 @@ interface Props extends Pick<PanGestureHandlerProps, 'simultaneousHandlers'> {
   onChangeSubject?: (subject: string) => void
   onFinishEditing?: () => void
   onToggleCheckbox?: () => void
+  onPressLabel?: () => void
   onRemove?: () => void
   subject: string
 }
@@ -100,6 +101,7 @@ export default function TaskItem(props: Props) {
             text={subject}
             iconStyle={{ borderColor: activeTextColor }}
             isChecked={isDone}
+            onPress={onToggleCheckbox}
           />
         )}
       </HStack>
