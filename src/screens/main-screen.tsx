@@ -106,7 +106,7 @@ export default function MainScreen() {
         bg={useColorModeValue('blue.500', 'blue.400')}
         onPress={() => {
           const id = shortid.generate()
-          setData(prevData => [
+          setData(() => [
             {
               id,
               subject: '',

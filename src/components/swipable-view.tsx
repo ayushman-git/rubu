@@ -36,7 +36,6 @@ const SwipeView = (props: Props) => {
     },
     onEnd: () => {
       const shouldBeDismissed = translateX.value < SWIPE_THRESHOLD
-      console.log(shouldBeDismissed)
       if (shouldBeDismissed) {
         translateX.value = withTiming(-SCREEN_WIDTH)
         if(onSwipeLeft) {
