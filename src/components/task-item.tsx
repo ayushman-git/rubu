@@ -1,5 +1,9 @@
 import React, { useCallback } from 'react'
-import { Pressable } from 'react-native'
+import {
+  NativeSyntheticEvent,
+  Pressable,
+  TextInputChangeEventData,
+} from 'react-native'
 import {
   Box,
   themeTools,
@@ -8,6 +12,7 @@ import {
   Icon,
   Text,
   HStack,
+  Input,
 } from 'native-base'
 import SwipeView from './swipable-view'
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
@@ -15,14 +20,25 @@ import { Feather } from '@expo/vector-icons'
 import { PanGestureHandlerProps } from 'react-native-gesture-handler'
 interface Props extends Pick<PanGestureHandlerProps, 'simultaneousHandlers'> {
   isDone: boolean
+  isEditing: boolean
+  onChangeSubject?: (subject: string) => void
+  onFinishEditing?: () => void
   onToggleCheckbox?: () => void
   onRemove?: () => void
   subject: string
 }
 
 export default function TaskItem(props: Props) {
-  const { isDone, onToggleCheckbox, onRemove, subject, simultaneousHandlers } =
-    props
+  const {
+    isEditing,
+    isDone,
+    onToggleCheckbox,
+    onChangeSubject,
+    onFinishEditing,
+    onRemove,
+    subject,
+    simultaneousHandlers,
+  } = props
   const theme = useTheme()
   const activeTextColor = themeTools.getColor(
     theme,
@@ -32,6 +48,14 @@ export default function TaskItem(props: Props) {
     theme,
     useColorModeValue('muted.400', 'muted.500'),
   )
+
+  const handleChangeSubject = useCallback(
+    (e: NativeSyntheticEvent<TextInputChangeEventData>) => {
+      onChangeSubject && onChangeSubject(e.nativeEvent.text)
+    },
+    [onChangeSubject],
+  )
+
   return (
     <SwipeView
       simultaneousHandlers={simultaneousHandlers}
@@ -56,14 +80,28 @@ export default function TaskItem(props: Props) {
         py={2}
         bg={useColorModeValue('warmGray.50', 'primary.900')}
       >
-        <BouncyCheckbox
-          size={25}
-          fillColor={doneTextColor}
-          unfillColor="#FFFFFF"
-          text={subject}
-          iconStyle={{ borderColor: activeTextColor }}
-          isChecked={isDone}
-        />
+        {isEditing ? (
+          <Input
+            placeholder={subject}
+            variant="unstyled"
+            fontSize={19}
+            px={1}
+            py={0}
+            autoFocus
+            blurOnSubmit
+            onChange={handleChangeSubject}
+            onBlur={onFinishEditing}
+          />
+        ) : (
+          <BouncyCheckbox
+            size={25}
+            fillColor={doneTextColor}
+            unfillColor="#FFFFFF"
+            text={subject}
+            iconStyle={{ borderColor: activeTextColor }}
+            isChecked={isDone}
+          />
+        )}
       </HStack>
     </SwipeView>
   )
