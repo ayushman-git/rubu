@@ -24,7 +24,7 @@ export default function MainScreen() {
     >
       <VStack space={5} alignItems={'center'} w="full">
         <Box w={"full"}>
-          <TaskItem isDone={true} subject='Hello text' onToggleCheckbox={() => {}} onRemove={() => {}} />
+          <TaskItem isDone={true} subject='Hello text' onToggleCheckbox={() => {}} onRemove={() => {console.log("Test")}} />
         </Box>
         <Box>
           <ThemeToggle />
