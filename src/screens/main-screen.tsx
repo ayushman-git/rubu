@@ -8,6 +8,8 @@ import {
   useTheme,
   useColorMode,
   useColorModeValue,
+  Fab,
+  Icon,
 } from 'native-base'
 import ThemeToggle from '../components/theme-toggle'
 import { AntDesign } from '@expo/vector-icons'
@@ -55,12 +57,9 @@ export default function MainScreen() {
     [],
   )
 
-  const handleFinishEditingTaskItem = useCallback(
-    (item: any, newSubject: string) => {
-      setEditingItemId(null)
-    },
-    [],
-  )
+  const handleFinishEditingTaskItem = useCallback(() => {
+    setEditingItemId(null)
+  }, [])
 
   const handlePressTaskItemLabel = useCallback((item: any) => {
     setEditingItemId(item.id)
@@ -98,6 +97,26 @@ export default function MainScreen() {
           <ThemeToggle />
         </Box>
       </VStack>
+      <Fab
+        position="absolute"
+        renderInPortal={false}
+        size="sm"
+        icon={<Icon color="white" as={<AntDesign name="plus" />} size="sm" />}
+        colorScheme={useColorModeValue('blue', 'darkBlue')}
+        bg={useColorModeValue('blue.500', 'blue.400')}
+        onPress={() => {
+          const id = shortid.generate()
+          setData(prevData => [
+            {
+              id,
+              subject: '',
+              done: false,
+            },
+            ...data,
+          ])
+          setEditingItemId(id)
+        }}
+      ></Fab>
     </Center>
   )
 }
