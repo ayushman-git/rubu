@@ -79,7 +79,7 @@ export default function TaskItem(props: Props) {
         w="full"
         px={4}
         py={2}
-        bg={useColorModeValue('warmGray.50', 'primary.900')}
+        bg={useColorModeValue('#EEF2F6', '#223044')}
       >
         {isEditing ? (
           <Input

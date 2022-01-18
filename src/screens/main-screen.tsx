@@ -20,18 +20,18 @@ import TaskList from '../components/task-list'
 const initialData = [
   {
     id: shortid.generate(),
-    subject: 'Buy movie tickets for Friday',
+    subject: 'Watch Attack on Titan',
     done: false,
   },
   {
     id: shortid.generate(),
-    subject: 'Make a React Native tutorial',
+    subject: 'Read book',
     done: false,
   },
 ]
 
 export default function MainScreen() {
-  const [data, setData] = React.useState(initialData)
+  const [data, setData] = useState(initialData)
   const [editingItemId, setEditingItemId] = useState<string | null>(null)
 
   const handleToggleTaskItem = useCallback((item: any) => {
@@ -74,15 +74,13 @@ export default function MainScreen() {
   }, [])
 
   return (
-    <Center
-      _dark={{ bg: 'blueGray.900' }}
-      _light={{ bg: 'darkBlue.50' }}
+    <Box
+      _dark={{ bg: '#223044' }}
+      _light={{ bg: '#EEF2F6' }}
       height={'100%'}
-      px={4}
       flex={1}
-      safeArea
     >
-      <VStack space={5} alignItems={'center'} w="full">
+      <VStack space={5} alignItems={'center'} w="full" py={2}>
         <Box w={'full'}>
           <TaskList
             data={data}
@@ -104,7 +102,7 @@ export default function MainScreen() {
         size="sm"
         icon={<Icon color="white" as={<AntDesign name="plus" />} size="sm" />}
         colorScheme={useColorModeValue('blue', 'darkBlue')}
-        bg={useColorModeValue('blue.500', 'blue.400')}
+        bg='#22c55e'
         onPress={() => {
           const id = shortid.generate()
           setData(() => [
@@ -118,6 +116,6 @@ export default function MainScreen() {
           setEditingItemId(id)
         }}
       ></Fab>
-    </Center>
+    </Box>
   )
 }
