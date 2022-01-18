@@ -95,11 +95,13 @@ export default function TaskItem(props: Props) {
           />
         ) : (
           <BouncyCheckbox
-            size={25}
-            fillColor={doneTextColor}
-            unfillColor="#FFFFFF"
+            size={28}
             text={subject}
-            iconStyle={{ borderColor: activeTextColor }}
+            textStyle={{ color: useColorModeValue('#111822', '#f0fdf4') }}
+            iconStyle={{
+              borderColor: useColorModeValue('#22c55e', '#111822'),
+              backgroundColor: useColorModeValue('#f0fdf4', '#4ade80'),
+            }}
             isChecked={isDone}
             onPress={onToggleCheckbox}
           />
