@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Icon, useColorModeValue, IButtonProps } from 'native-base'
-import { Feather } from "@expo/vector-icons"
+import { Feather } from '@expo/vector-icons'
 
 interface Props {
   active: Boolean
@@ -24,10 +24,10 @@ export default function MenuButton({
       colorScheme={colorScheme}
       bg={active ? undefined : 'transparent'}
       _pressed={{
-          bg: pressBgColor,
+        bg: pressBgColor,
       }}
       _text={{
-          color: active ? 'blue.500' : inactiveTextColor,
+        color: active ? 'blue.500' : inactiveTextColor,
       }}
       leftIcon={<Icon as={Feather} name={icon} size="sm" opacity={0.5} />}
     ></Button>
