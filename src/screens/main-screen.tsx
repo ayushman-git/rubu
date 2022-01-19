@@ -92,9 +92,6 @@ export default function MainScreen() {
             editingItemId={editingItemId}
           />
         </Box>
-        <Box>
-          <ThemeToggle />
-        </Box>
       </VStack>
       <Fab
         position="absolute"
