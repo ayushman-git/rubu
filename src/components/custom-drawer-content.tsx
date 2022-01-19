@@ -50,6 +50,18 @@ export default function CustomDrawerContent(
             }}
           />
         </HStack>
+        <Avatar
+          source={{
+            uri: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg',
+          }}
+          borderWidth={3}
+          borderRadius={100}
+          borderColor="secondary.500"
+          size="xl"
+        />
+        <Heading mb={4} size="xl">Ayushman Gupta</Heading>
+        <MenuButton active={currentRoute === 'Main'} onPress={handlePressMenuMain} icon="inbox">Tasks</MenuButton>
+        <MenuButton active={currentRoute === 'About'} onPress={handlePressMenuAbout} icon="inbox">About</MenuButton>
       </VStack>
     </Box>
   )

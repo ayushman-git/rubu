@@ -30,6 +30,7 @@ export default function MenuButton({
         color: active ? 'blue.500' : inactiveTextColor,
       }}
       leftIcon={<Icon as={Feather} name={icon} size="sm" opacity={0.5} />}
-    ></Button>
+      {...props}
+    >{children}</Button>
   )
 }
