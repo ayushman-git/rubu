@@ -97,6 +97,8 @@ export default function TaskItem(props: Props) {
           <BouncyCheckbox
             size={28}
             text={subject}
+            fillColor="red"
+            unfillColor="#FFFFFF"
             textStyle={{ color: useColorModeValue('#111822', '#f0fdf4') }}
             iconStyle={{
               borderColor: useColorModeValue('#22c55e', '#111822'),
