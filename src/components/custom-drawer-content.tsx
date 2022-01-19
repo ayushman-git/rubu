@@ -19,7 +19,7 @@ export default function CustomDrawerContent(
   const { state, navigation } = props
   const currentRoute = state.routeNames[state.index]
 
-  const handlePressMenuButton = useCallback(() => {
+  const handlePressMenuClose = useCallback(() => {
     navigation.closeDrawer()
   }, [navigation])
   const handlePressMenuMain = useCallback(() => {
@@ -37,7 +37,18 @@ export default function CustomDrawerContent(
     >
       <VStack flex={1} space={2}>
         <HStack justifyContent="flex-end">
-          <IconButton />
+          <IconButton
+            onPress={handlePressMenuClose}
+            borderRadius={100}
+            variant="outline"
+            borderColor={useColorModeValue('blue.300', 'darkBlue.700')}
+            _icon={{
+              as: Feather,
+              name: 'chevron-left',
+              size: 6,
+              color: useColorModeValue('blue.800', 'darkBlue.700'),
+            }}
+          />
         </HStack>
       </VStack>
     </Box>
