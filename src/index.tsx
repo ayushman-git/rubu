@@ -9,14 +9,14 @@ const Drawer = createDrawerNavigator()
 
 export default function App() {
   return (
-    <Drawer.Navigator drawerContent={(props) => <CustomDrawerContent {...props} />}>
-      <Drawer.Screen name="Home" component={MainScreen} options={{
-        headerStyle: {
-          backgroundColor: useColorModeValue('#22c55e', '#111822'),
-        },
-        headerTintColor: '#fff',
-        headerShadowVisible: false,
-      }} />
+    <Drawer.Navigator drawerContent={(props) => <CustomDrawerContent {...props} />} screenOptions={{
+      headerStyle: {
+        backgroundColor: useColorModeValue('#22c55e', '#111822'),
+      },
+      headerTintColor: '#fff',
+      headerShadowVisible: false,
+    }}>
+      <Drawer.Screen name="Home" component={MainScreen} />
       <Drawer.Screen name="About" component={AboutScreen} />
     </Drawer.Navigator>
   )
