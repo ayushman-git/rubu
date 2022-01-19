@@ -6,6 +6,7 @@ import {
   VStack,
   IconButton,
   Heading,
+  Center,
 } from 'native-base'
 import React, { useCallback } from 'react'
 import { DrawerContentComponentProps } from '@react-navigation/drawer'
@@ -23,11 +24,13 @@ export default function CustomDrawerContent(
     navigation.closeDrawer()
   }, [navigation])
   const handlePressMenuMain = useCallback(() => {
-    navigation.navigate('Main')
+    navigation.navigate('Home')
   }, [navigation])
   const handlePressMenuAbout = useCallback(() => {
+    console.log('TEST')
     navigation.navigate('About')
   }, [navigation])
+
   return (
     <Box
       safeArea
@@ -59,9 +62,26 @@ export default function CustomDrawerContent(
           borderColor="secondary.500"
           size="xl"
         />
-        <Heading mb={4} size="xl">Ayushman Gupta</Heading>
-        <MenuButton active={currentRoute === 'Main'} onPress={handlePressMenuMain} icon="inbox">Tasks</MenuButton>
-        <MenuButton active={currentRoute === 'About'} onPress={handlePressMenuAbout} icon="inbox">About</MenuButton>
+        <Heading mb={4} size="xl">
+          Ayushman Gupta
+        </Heading>
+        <MenuButton
+          active={currentRoute === 'Home'}
+          onPress={handlePressMenuMain}
+          icon="inbox"
+        >
+          Tasks
+        </MenuButton>
+        <MenuButton
+          active={currentRoute === 'About'}
+          onPress={handlePressMenuAbout}
+          icon="info"
+        >
+          About
+        </MenuButton>
+        <Center>
+          <ThemeToggle />
+        </Center>
       </VStack>
     </Box>
   )
