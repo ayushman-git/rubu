@@ -23,7 +23,7 @@ export default function MastHead({ title, image, children }: Props) {
       />
       {children}
       <Box flex={1} />
-      <Heading color="white" px={4} size="xl">
+      <Heading color="white" px={4} paddingBottom={2} size="xl">
         {title}
       </Heading>
     </VStack>
