@@ -16,6 +16,7 @@ import AnimatedColorBox from '../components/animated-color-box'
 import { AntDesign } from '@expo/vector-icons'
 import shortid from 'shortid'
 import TaskList from '../components/task-list'
+import MastHead from '../components/masthead'
 
 const initialData = [
   {
@@ -80,6 +81,7 @@ export default function MainScreen() {
       height={'100%'}
       flex={1}
     >
+      <MastHead title="What's up, Ayushman!" image={require('../../assets/masthead.png')}></MastHead>
       <VStack space={5} alignItems={'center'} w="full" py={2}>
         <Box w={'full'}>
           <TaskList

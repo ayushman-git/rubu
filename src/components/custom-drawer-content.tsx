@@ -48,7 +48,7 @@ export default function CustomDrawerContent(
               as: Feather,
               name: 'chevron-left',
               size: 6,
-              color: useColorModeValue('blue.800', 'darkBlue.700'),
+              color: useColorModeValue('blue.500', 'blue.500'),
             }}
           />
         </HStack>
