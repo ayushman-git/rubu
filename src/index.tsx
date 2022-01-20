@@ -11,7 +11,7 @@ export default function App() {
   return (
     <Drawer.Navigator drawerContent={(props) => <CustomDrawerContent {...props} />} screenOptions={{
       headerStyle: {
-        backgroundColor: useColorModeValue('#22c55e', '#006ad8'),
+        backgroundColor: '#006ad8',
       },
       headerTintColor: '#fff',
       headerShadowVisible: false,
