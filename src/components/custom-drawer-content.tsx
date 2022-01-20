@@ -27,7 +27,6 @@ export default function CustomDrawerContent(
     navigation.navigate('Home')
   }, [navigation])
   const handlePressMenuAbout = useCallback(() => {
-    console.log('TEST')
     navigation.navigate('About')
   }, [navigation])
 
@@ -35,7 +34,7 @@ export default function CustomDrawerContent(
     <Box
       safeArea
       flex={1}
-      bg={useColorModeValue('blue.50', 'primary.900')}
+      bg={useColorModeValue('blue.50', 'black')}
       p={7}
     >
       <VStack flex={1} space={2}>
@@ -79,10 +78,10 @@ export default function CustomDrawerContent(
         >
           About
         </MenuButton>
-        <Center>
-          <ThemeToggle />
-        </Center>
       </VStack>
+      <Center>
+        <ThemeToggle />
+      </Center>
     </Box>
   )
 }
