@@ -11,8 +11,6 @@ import {
   Fab,
   Icon,
 } from 'native-base'
-import ThemeToggle from '../components/theme-toggle'
-import AnimatedColorBox from '../components/animated-color-box'
 import { AntDesign } from '@expo/vector-icons'
 import shortid from 'shortid'
 import TaskList from '../components/task-list'
