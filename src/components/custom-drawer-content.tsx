@@ -53,12 +53,10 @@ export default function CustomDrawerContent(
           />
         </HStack>
         <Avatar
-          source={{
-            uri: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg',
-          }}
+          source={require('../../assets/profile.jpeg')}
           borderWidth={3}
           borderRadius={100}
-          borderColor="secondary.500"
+          borderColor="blue.500"
           size="xl"
         />
         <Heading mb={4} size="xl">
