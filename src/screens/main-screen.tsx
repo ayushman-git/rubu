@@ -73,19 +73,25 @@ export default function MainScreen() {
   }, [])
 
   return (
-    <Box
-      _dark={{ bg: '#223044' }}
-      _light={{ bg: '#EEF2F6' }}
-      height={'100%'}
-      flex={1}
-      borderLeftRadius={20}
-    >
+    <Box height={'100%'} flex={1}>
       <MastHead
         title="What's up, Ayushman!"
         image={require('../../assets/masthead.png')}
       ></MastHead>
-      <VStack space={5} alignItems={'center'} w="full" py={2}>
-        <Box w={'full'}>
+      <VStack
+        space={5}
+        alignItems={'center'}
+        w="full"
+        py={2}
+        borderTopLeftRadius="20px"
+        borderTopRightRadius="20px"
+        _dark={{ bg: '#223044' }}
+        _light={{ bg: '#EEF2F6' }}
+        flex={1}
+        marginTop={-4}
+        paddingTop={4}
+      >
+        <Box w={'full'} borderRadius={10}>
           <TaskList
             data={data}
             onToggleItem={handleToggleTaskItem}
