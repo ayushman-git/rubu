@@ -78,8 +78,12 @@ export default function MainScreen() {
       _light={{ bg: '#EEF2F6' }}
       height={'100%'}
       flex={1}
+      borderLeftRadius={20}
     >
-      <MastHead title="What's up, Ayushman!" image={require('../../assets/masthead.png')}></MastHead>
+      <MastHead
+        title="What's up, Ayushman!"
+        image={require('../../assets/masthead.png')}
+      ></MastHead>
       <VStack space={5} alignItems={'center'} w="full" py={2}>
         <Box w={'full'}>
           <TaskList
@@ -99,7 +103,7 @@ export default function MainScreen() {
         size="sm"
         icon={<Icon color="white" as={<AntDesign name="plus" />} size="sm" />}
         colorScheme={useColorModeValue('blue', 'darkBlue')}
-        bg='#22c55e'
+        bg="#22c55e"
         onPress={() => {
           const id = shortid.generate()
           setData(() => [

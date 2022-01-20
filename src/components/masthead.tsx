@@ -5,10 +5,10 @@ import { Box, VStack, Heading, Image } from 'native-base'
 interface Props {
   title: string
   image: ImageSourcePropType
-  // children: React.ReactNode
+  children?: React.ReactNode
 }
 
-export default function MastHead({ title, image }: Props) {
+export default function MastHead({ title, image, children }: Props) {
   return (
     <VStack h="300px" pb={5}>
       <Image
@@ -21,7 +21,7 @@ export default function MastHead({ title, image }: Props) {
         w="full"
         alt="masthead"
       />
-      {/* {children} */}
+      {children}
       <Box flex={1} />
       <Heading color="white" px={4} size="xl">
         {title}
