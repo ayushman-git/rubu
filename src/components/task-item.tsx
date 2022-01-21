@@ -98,12 +98,13 @@ export default function TaskItem(props: Props) {
             size={28}
             text={subject}
             fillColor="red"
-            unfillColor="#FFFFFF"
+            unfillColor="#000"
             textStyle={{ color: useColorModeValue('#111822', '#f0fdf4') }}
             iconStyle={{
-              borderColor: useColorModeValue('#22c55e', '#111822'),
-              backgroundColor: useColorModeValue('#f0fdf4', '#4ade80'),
+              borderColor: useColorModeValue('#1e40af', '#1e40af'),
+              backgroundColor: '#60a5fa',
             }}
+
             isChecked={isDone}
             onPress={onToggleCheckbox}
           />
